@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1,minimum-scale=1,user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>回忆过去</title>
+    <link rel="stylesheet" href="./css/swiper.min.css">
+     <link rel="stylesheet" href="./css/index.css">
+    
+
+</head>
+<body>
+    <audio src="./music/lancheng.mp3" autoplay></audio>
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide one">
+                <div class="qian">
+                    <img src="./images/q1.png" alt="" class="wan">
+                </div>
+            </div>
+            <div class="swiper-slide text">
+                <div class="yuan">
+                    <img src="./images/y1.png" alt="" class="tu">   
+                </div>
+               
+            </div>
+            <div class="swiper-slide two">
+                <div class="zhao">
+                    <img src="./images/z1.jpg" alt="" class="sr">   
+                </div>              
+            </div>
+             <div class="swiper-slide four">
+                <div class="tian">
+                    <img src="./images/w1.jpg" alt="" class="sr">   
+                </div>              
+            </div>
+            <div class="swiper-slide five">
+                <div class="liang">
+                    <img src="./images/l1.jpeg" alt="" class="sr">   
+                </div>              
+            </div>   
+            <div class="swiper-slide six">
+                <div class="yas">
+                    <img src="./images/f1.png" alt="" class="sr">   
+                </div>              
+            </div> 
+             <div class="swiper-slide seven">
+                <div class="wang">
+                    <img src="./images/t1.png" alt="" class="sr">   
+                </div>              
+            </div>   
+            
+             <div class="swiper-slide eight">
+                   <div class="jia">
+                    <img src="./images/10.jpg" alt="" class="sr">   
+                </div>        
+            </div>   
+
+        </div>
+        
+       
+        
+        
+       </div>
+    
+
+    <script src="./js/swiper.min.js"></script>
+    <script src="./JS/jquery.min-1.72.js"></script>
+  <script> 
+        var mySwiper = new Swiper('.swiper-container',{
+            direction: 'vertical',
+          effect : 'cube',
+            cube: {
+            slideShadows: true,
+            shadow: true,
+            shadowOffset: 100,
+            shadowScale: 0.6
+            },
+          onSlideChangeEnd: function (swiper) {
+          
+            // 把其他页面删掉animation类名
+            $(".swiper-slide").removeClass('animation');
+            // 找到索引为当前显示页面的索引的那个页面，给它加一个类名animation
+            $(".swiper-slide").eq(swiper.activeIndex).addClass('animation');
+        }  
+
+        })
+        $('#btn1').click(function(){
+            
+        // alert(mySwiper.slides.length);
+        mySwiper.slides[0].style.opacity=0.5;//获取slide的HTML元素并修改样式
+        //mySwiper.slides.eq(0).css({opacity: 0.1});获取slide的jquery元素并修改样式
+    })
+
+     $(function () {
+
+        $('.one').addClass('animation');
+    })
+
+</script>
+
+
+
+
+</body>
+</html>
